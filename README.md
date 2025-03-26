@@ -31,7 +31,7 @@ This project helps evaluate MSMEs' digital presence by analyzing their online fo
 
 ## 🛠️ Tools & Resources
 
-Feel free to use any of the following to help with your implementation:
+Feel free to use any of the following but no limited this to help with your implementation:
 
 1. **Open Source Libraries**
    - BeautifulSoup4 for web scraping
