@@ -1,105 +1,220 @@
+# Credit Chakra MSME Digital Presence Analyzer
 
-# Credit Chakra Hackathon – Data Engineer Intern
+## 🧩 Problem Statement
 
-Welcome to the Credit Chakra Hackathon Challenge! This is your chance to showcase your coding skills by extracting real-world digital presence data of MSMEs in India.
+Build a FastAPI application that collects publicly available digital data of MSMEs in India across multiple platforms.
 
-You must complete **at least 3 out of the 4 tracks** using **Python and FastAPI** and structure your output clearly.
+Your goal is to simulate how a credit scoring engine might assess a small business's credibility based on their online presence. You'll be working with real-world businesses — from your city, locality, or anywhere in India — and building APIs to extract and format relevant digital signals.
 
----
+## 🎯 What You Need To Do
 
-## 🚀 Objective
-Build a FastAPI application with endpoints that extract public digital data for Indian MSMEs from:
-- Google Maps
-- Instagram
-- Business Websites
-- JustDial / IndiaMART
+1. Choose **3 out of 4 real-world data extraction tracks**
+2. Build a **FastAPI-based Python app**
+3. Each track should have its own **API endpoint**
+4. Output data for **at least 2 MSMEs per track** in JSON format
+5. Submit your GitHub repo with clean code + documentation
 
----
+## 🛠️ Platforms You'll Work With
 
-## ✅ Your Mission
-Complete **3 out of 4 Tracks** below:
+| Track | Platform | What You'll Extract | Points |
+|-------|----------|---------------------|--------|
+| 1. Google Maps | Reviews, Ratings, Photos | Local reputation | 40 |
+| 2. Instagram | Followers, Engagement | Digital reach | 30 |
+| 3. Website | Domain age, SSL, Products | Trustworthiness | 30 |
+| 4. JustDial / IndiaMART | Listings, Ratings | Local verification | 30 |
 
-### 📍 Track 1: Google Maps Review Scraper
-`GET /google-maps?business=Triveni%20Store&city=Hyderabad`
-- Google rating
-- Review count
-- Top 3 review texts
-- Photo count
-- Last photo upload date
+## 🚀 Getting Started
 
-### 📍 Track 2: Instagram Profile Analyzer
-`GET /instagram?handle=stylehub_mumbai`
-- Follower count
-- Post count
-- Avg likes/comments on last 5 posts
-- Engagement rate
+### Prerequisites
+- Python 3.8+
+- pip (Python package manager)
+- Git
 
-### 📍 Track 3: Website & Domain Checker
-`GET /website?url=https://www.sargamfashion.in`
-- SSL valid?
-- Domain age
-- Mobile responsiveness (optional)
-- Product/services page present?
+### Setup Instructions
 
-### 📍 Track 4: JustDial / IndiaMART Listing
-`GET /listing?business=Ramdev%20Hardware&city=Ahmedabad`
-- Listing present?
-- Rating
-- Phone number present?
-- Photos present?
-
----
-
-## 📦 Project Structure
-```
-credit-chakra-hackathon/
-├── app/
-│   ├── main.py
-│   ├── google_maps.py
-│   ├── instagram.py
-│   ├── website.py
-│   ├── listing.py
-├── data/
-│   └── output.json / output.csv
-├── requirements.txt
-├── .env.example
-└── README.md
+1. Clone this repository:
+```bash
+git clone <repository-url>
+cd credit-chakra-hackathon-template
 ```
 
----
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-## ▶️ How to Run
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+4. Run the application:
+```bash
 uvicorn app.main:app --reload
 ```
 
----
+5. Access the API documentation:
+- Open http://localhost:8000/docs in your browser
 
-## 📤 Submission Format
-Send an email to `contact@creditchakra.in` with:
-- Subject: `Credit Chakra Hackathon Submission – [Your Name] – [College Name]`
+## 📝 Implementation Tasks
 
-**Email Body:**
+### 1. Choose Your Tracks
+Select 3 platforms from the available tracks. For each track:
+- Create a new Python module in the `app` directory
+- Implement data extraction logic
+- Create FastAPI endpoints
+- Add data validation
+- Implement error handling
+
+### 2. Data Extraction Implementation
+For each track, implement:
+
+#### Website Analysis (30 points)
+- Domain age checking
+- SSL certificate verification
+- Mobile responsiveness
+- Content quality analysis
+- Contact information extraction
+
+#### Google Maps (40 points)
+- Business search functionality
+- Reviews and ratings extraction
+- Photos count and analysis
+- Business details scraping
+- Location data processing
+
+#### Instagram (30 points)
+- Profile data extraction
+- Follower count tracking
+- Post frequency analysis
+- Engagement rate calculation
+- Content type analysis
+
+#### JustDial/IndiaMART (30 points)
+- Business listing extraction
+- Ratings and reviews collection
+- Service/product categorization
+- Contact information validation
+- Business age verification
+
+### 3. Credit Scoring System
+Implement a scoring algorithm that:
+- Weighs different factors from each platform
+- Calculates a unified credit score
+- Provides score breakdown
+- Generates score explanations
+
+## 📊 Scoring Criteria
+
+Your implementation will be evaluated on:
+
+1. **Code Quality (30%)**
+   - Clean, well-organized code
+   - Proper error handling
+   - Input validation
+   - Documentation
+   - Type hints
+
+2. **Functionality (40%)**
+   - Successful data extraction
+   - Accurate scoring system
+   - API reliability
+   - Error handling
+   - Response format
+
+3. **Technical Design (30%)**
+   - Code structure
+   - Scalability
+   - Maintainability
+   - Testing coverage
+   - Documentation quality
+
+## 📚 API Documentation
+
+### Base URL
+`http://localhost:8000`
+
+### Endpoints
+
+1. Website Data
 ```
-Name: [Your Full Name]  
-College: [Your College Name]  
-Year: [2nd / 3rd / Final Year]  
-Track(s) Completed: [Google Maps, Instagram, Website]  
-GitHub Repo Link: [Paste your public repo URL here]
-
-Notes (optional):
-- Any assumptions or workarounds
-- Tools/libraries used
-- Bonus features (if any)
+GET /api/v1/website/{business_name}
 ```
 
-📞 Contact: contact@creditchakra.in  
-📍 Available for in-person meetups in Bangalore
+2. Google Maps Data
+```
+GET /api/v1/google-maps/{business_name}
+```
 
----
+3. Instagram Data
+```
+GET /api/v1/instagram/{business_name}
+```
 
-## 🏁 Deadline
-Submit within **48 hours** of receiving this challenge.
+4. JustDial Data
+```
+GET /api/v1/justdial/{business_name}
+```
 
-Good luck and build something real 💪
+5. Credit Score
+```
+GET /api/v1/score/{business_name}
+```
+
+## 🔍 Testing
+
+1. Create test cases in the `tests` directory
+2. Test with real MSME data
+3. Validate scoring accuracy
+4. Check error handling
+5. Verify API responses
+
+## 📦 Project Structure
+```
+credit-chakra-hackathon-template/
+├── app/
+│   ├── main.py           # FastAPI application
+│   ├── website.py        # Website scraping
+│   ├── google_maps.py    # Google Maps scraping
+│   ├── instagram.py      # Instagram scraping
+│   ├── justdial.py       # JustDial scraping
+│   ├── scoring.py        # Credit scoring logic
+│   └── listing.py        # Data storage
+├── data/
+│   └── output.json       # Scraped data storage
+├── tests/
+│   └── test_*.py         # Unit tests
+├── requirements.txt      # Dependencies
+└── README.md            # Documentation
+```
+
+## ⚠️ Important Notes
+
+1. Use only publicly available data
+2. Implement proper rate limiting
+3. Handle errors gracefully
+4. Document your code
+5. Follow Python best practices
+6. Add proper logging
+7. Include error handling
+8. Write unit tests
+
+## 🏁 Submission Guidelines
+
+1. Clean and documented code
+2. Working API endpoints
+3. Test data for at least 2 MSMEs
+4. README with setup instructions
+5. Requirements.txt with dependencies
+6. Unit tests
+7. API documentation
+
+## 🤝 Need Help?
+
+- Check the FastAPI documentation: https://fastapi.tiangolo.com/
+- Review Python scraping best practices
+- Study the provided template code
+- Ask questions in the discussion forum
+
+Good luck with your implementation! 🚀
