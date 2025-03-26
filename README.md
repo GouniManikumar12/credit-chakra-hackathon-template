@@ -214,6 +214,43 @@ GET /api/v1/score/{business_name}
    - API documentation
    - Setup instructions
 
+## 📧 Submission Email Template
+
+Use the following template for your submission email:
+
+```
+Hi Credit Chakra Team,
+
+I'm submitting my project for the Credit Chakra MSME Digital Presence Analyzer Hackathon.  
+Please find the details below:
+
+🔹 **Name**: John Doe  
+🔹 **College**: [Your College Name]  
+🔹 **Year & Branch**: 3rd Year, B.Tech in [Your Branch]  
+🔹 **GitHub Repo Link**: https://github.com/your-username/credit-chakra-msme-analyzer  
+🔹 **Tracks Implemented**: Google Maps, Instagram, Website  
+🔹 **Bonus Features (if any)**:
+- Review sentiment analysis using TextBlob
+- Engagement rate calculation on Instagram
+- Domain trustworthiness logic
+- Clean scoring breakdown endpoint
+
+📝 Notes:
+- Fully working FastAPI backend with 3 tracks  
+- Real data for 2+ MSMEs per track  
+- Scoring system with breakdown  
+- Sample outputs in `data/output.json`  
+- Basic test cases  
+- Setup instructions in the README
+
+Looking forward to your feedback!
+
+Thanks and regards,  
+**John Doe**  
+[Your Phone Number (Optional)]  
+[Your LinkedIn (Optional)]
+```
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
