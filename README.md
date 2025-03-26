@@ -232,12 +232,12 @@ Hi Credit Chakra Team,
 I'm submitting my project for the Credit Chakra MSME Digital Presence Analyzer Hackathon.  
 Please find the details below:
 
-🔹 **Name**: John Doe  
-🔹 **College**: [Your College Name]  
-🔹 **Year & Branch**: 3rd Year, B.Tech in [Your Branch]  
-🔹 **GitHub Repo Link**: https://github.com/your-username/credit-chakra-msme-analyzer  
-🔹 **Tracks Implemented**: Google Maps, Instagram, Website  
-🔹 **Bonus Features (if any)**:
+🔹 Name: John Doe  
+🔹 College: [Your College Name]  
+🔹 Year & Branch: 3rd Year, B.Tech in [Your Branch]  
+🔹 GitHub Repo Link: https://github.com/your-username/credit-chakra-msme-analyzer  
+🔹 Tracks Implemented: Google Maps, Instagram, Website  
+🔹 Bonus Features (if any):
 - Review sentiment analysis using TextBlob
 - Engagement rate calculation on Instagram
 - Domain trustworthiness logic
@@ -254,7 +254,7 @@ Please find the details below:
 Looking forward to your feedback!
 
 Thanks and regards,  
-**John Doe**  
+John Doe  
 [Your Phone Number (Optional)]  
 [Your LinkedIn (Optional)]
 ```
