@@ -4,7 +4,7 @@ A FastAPI application for analyzing MSME (Micro, Small, and Medium Enterprises) 
 
 ## 🎯 Project Overview
 
-This project helps evaluate MSMEs' digital presence by analyzing their online footprint across multiple platforms. Students need to implement data collection and scoring logic for 3 out of 4 available tracks.
+This project helps evaluate MSMEs' digital presence by analyzing their online footprint across multiple platforms. Students must implement at least 2 out of 4 available tracks (3 tracks recommended for better scoring).
 
 ## ⏰ Timeline Recommendation
 
@@ -111,9 +111,10 @@ credit-chakra-hackathon-template/
 ## 📝 Implementation Steps
 
 1. **Choose Your Tracks**
-   - Select 3 out of 4 available tracks
+   - Select at least 2 out of 4 available tracks (3 tracks recommended)
    - Implement the corresponding endpoints in `app/main.py`
    - Each track should have its own data collection module
+   - More tracks = Better scoring potential
 
 2. **Implement Track Endpoints**
    - Each track has its own endpoint in `app/main.py`
