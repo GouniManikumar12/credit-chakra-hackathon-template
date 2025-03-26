@@ -222,6 +222,8 @@ GET /api/v1/score/{business_name}
 
 ## 📧 Submission Email Template
 
+Send your submission to: contact@creditchakra.in
+
 Use the following template for your submission email:
 
 ```
