@@ -29,6 +29,35 @@ This project helps evaluate MSMEs' digital presence by analyzing their online fo
    - Collect ratings and reviews
    - Verify listing details and photos
 
+## 🛠️ Tools & Resources
+
+Feel free to use any of the following to help with your implementation:
+
+1. **Open Source Libraries**
+   - BeautifulSoup4 for web scraping
+   - Selenium for dynamic content
+   - Requests for API calls
+   - Pandas for data processing
+   - NLTK for text analysis
+
+2. **AI Tools**
+   - ChatGPT for code assistance
+   - GitHub Copilot for code suggestions
+   - AI-powered code editors
+   - AI tools for data analysis
+
+3. **Development Tools**
+   - VS Code with Python extensions
+   - Postman for API testing
+   - Git for version control
+   - Docker for containerization
+
+Remember to:
+- Document any third-party tools you use
+- Follow the tools' licenses and terms of use
+- Give credit to open source projects
+- Keep your code original and unique
+
 ## 🚀 Getting Started
 
 1. **Setup Environment**
@@ -58,6 +87,21 @@ This project helps evaluate MSMEs' digital presence by analyzing their online fo
    ```bash
    uvicorn app.main:app --reload
    ```
+
+## 📦 Project Structure
+
+```
+credit-chakra-hackathon-template/
+├── app/
+│   ├── main.py           # FastAPI application and endpoints
+│   ├── website.py        # Website analysis logic
+│   ├── listing.py        # Data storage management
+│   └── scoring.py        # Credit scoring logic
+├── data/
+│   └── output.json       # Stored analysis results
+├── requirements.txt      # Project dependencies
+└── README.md            # This file
+```
 
 ## 📝 Implementation Steps
 
@@ -169,60 +213,6 @@ GET /api/v1/score/{business_name}
    - Clear code comments
    - API documentation
    - Setup instructions
-
-## 🐛 Testing
-
-1. **Run Tests**
-   ```bash
-   pytest
-   ```
-
-2. **Test Coverage**
-   ```bash
-   pytest --cov=app tests/
-   ```
-
-## 📦 Project Structure
-
-```
-credit-chakra-hackathon-template/
-├── app/
-│   ├── main.py           # FastAPI application and endpoints
-│   ├── website.py        # Website analysis logic
-│   ├── listing.py        # Data storage management
-│   └── scoring.py        # Credit scoring logic
-├── data/
-│   └── output.json       # Stored analysis results
-├── tests/
-│   └── test_*.py         # Test files
-├── requirements.txt      # Project dependencies
-└── README.md            # This file
-```
-
-## ⚠️ Important Notes
-
-1. **API Keys and Credentials**
-   - Never commit API keys to the repository
-   - Use environment variables for sensitive data
-   - Document required credentials in .env.example
-
-2. **Rate Limiting**
-   - Implement rate limiting for external APIs
-   - Handle API quotas and limits
-   - Cache responses when appropriate
-
-3. **Error Handling**
-   - Handle network errors gracefully
-   - Provide meaningful error messages
-   - Log errors for debugging
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
 
 ## 📄 License
 
