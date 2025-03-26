@@ -36,7 +36,7 @@ We recommend completing and submitting your project within 48 hours of receiving
 
 ## 🛠️ Tools & Resources
 
-Feel free to use any of the following but no limited this to help with your implementation:
+Feel free to use any of the following but not limited to help with your implementation:
 
 1. **Open Source Libraries**
    - BeautifulSoup4 for web scraping
