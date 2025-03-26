@@ -1,220 +1,229 @@
 # Credit Chakra MSME Digital Presence Analyzer
 
-## 🧩 Problem Statement
+A FastAPI application for analyzing MSME (Micro, Small, and Medium Enterprises) digital presence across multiple platforms.
 
-Build a FastAPI application that collects publicly available digital data of MSMEs in India across multiple platforms.
+## 🎯 Project Overview
 
-Your goal is to simulate how a credit scoring engine might assess a small business's credibility based on their online presence. You'll be working with real-world businesses — from your city, locality, or anywhere in India — and building APIs to extract and format relevant digital signals.
+This project helps evaluate MSMEs' digital presence by analyzing their online footprint across multiple platforms. Students need to implement data collection and scoring logic for 3 out of 4 available tracks.
 
-## 🎯 What You Need To Do
+## 🛠️ Available Tracks
 
-1. Choose **3 out of 4 real-world data extraction tracks**
-2. Build a **FastAPI-based Python app**
-3. Each track should have its own **API endpoint**
-4. Output data for **at least 2 MSMEs per track** in JSON format
-5. Submit your GitHub repo with clean code + documentation
+1. **Google Maps Analysis**
+   - Scrape business information from Google Maps
+   - Collect ratings, reviews, and photos
+   - Optional: Analyze review sentiment
 
-## 🛠️ Platforms You'll Work With
+2. **Instagram Analysis**
+   - Analyze business Instagram profile
+   - Collect follower count, engagement metrics
+   - Analyze recent posts and engagement
 
-| Track | Platform | What You'll Extract | Points |
-|-------|----------|---------------------|--------|
-| 1. Google Maps | Reviews, Ratings, Photos | Local reputation | 40 |
-| 2. Instagram | Followers, Engagement | Digital reach | 30 |
-| 3. Website | Domain age, SSL, Products | Trustworthiness | 30 |
-| 4. JustDial / IndiaMART | Listings, Ratings | Local verification | 30 |
+3. **Website Analysis**
+   - Check domain age using whois
+   - Verify SSL certificate status
+   - Check for product/services pages
+   - Optional: Mobile responsiveness check
+
+4. **JustDial/IndiaMART Analysis**
+   - Check business listing status
+   - Collect ratings and reviews
+   - Verify listing details and photos
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Python 3.8+
-- pip (Python package manager)
-- Git
+1. **Setup Environment**
+   ```bash
+   # Clone the repository
+   git clone <repository-url>
+   cd credit-chakra-hackathon-template
 
-### Setup Instructions
+   # Create and activate virtual environment
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-1. Clone this repository:
-```bash
-git clone <repository-url>
-cd credit-chakra-hackathon-template
-```
+   # Install dependencies
+   pip install -r requirements.txt
+   ```
 
-2. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+2. **Configure Environment Variables**
+   ```bash
+   # Copy example environment file
+   cp .env.example .env
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+   # Edit .env with your configuration
+   # Add any required API keys or credentials
+   ```
 
-4. Run the application:
-```bash
-uvicorn app.main:app --reload
-```
+3. **Run the Application**
+   ```bash
+   uvicorn app.main:app --reload
+   ```
 
-5. Access the API documentation:
-- Open http://localhost:8000/docs in your browser
+## 📝 Implementation Steps
 
-## 📝 Implementation Tasks
+1. **Choose Your Tracks**
+   - Select 3 out of 4 available tracks
+   - Implement the corresponding endpoints in `app/main.py`
+   - Each track should have its own data collection module
 
-### 1. Choose Your Tracks
-Select 3 platforms from the available tracks. For each track:
-- Create a new Python module in the `app` directory
-- Implement data extraction logic
-- Create FastAPI endpoints
-- Add data validation
-- Implement error handling
+2. **Implement Track Endpoints**
+   - Each track has its own endpoint in `app/main.py`
+   - Replace `NotImplementedError` with your implementation
+   - Follow the specified return format for each endpoint
+   - Implement proper error handling and validation
 
-### 2. Data Extraction Implementation
-For each track, implement:
+3. **Implement Scoring System**
+   - Update `app/scoring.py` with your scoring logic
+   - Implement track-specific scoring methods
+   - Create a final score calculation
+   - Ensure scoring reflects the importance of each track
 
-#### Website Analysis (30 points)
-- Domain age checking
-- SSL certificate verification
-- Mobile responsiveness
-- Content quality analysis
-- Contact information extraction
+## 🔍 API Endpoints
 
-#### Google Maps (40 points)
-- Business search functionality
-- Reviews and ratings extraction
-- Photos count and analysis
-- Business details scraping
-- Location data processing
-
-#### Instagram (30 points)
-- Profile data extraction
-- Follower count tracking
-- Post frequency analysis
-- Engagement rate calculation
-- Content type analysis
-
-#### JustDial/IndiaMART (30 points)
-- Business listing extraction
-- Ratings and reviews collection
-- Service/product categorization
-- Contact information validation
-- Business age verification
-
-### 3. Credit Scoring System
-Implement a scoring algorithm that:
-- Weighs different factors from each platform
-- Calculates a unified credit score
-- Provides score breakdown
-- Generates score explanations
-
-## 📊 Scoring Criteria
-
-Your implementation will be evaluated on:
-
-1. **Code Quality (30%)**
-   - Clean, well-organized code
-   - Proper error handling
-   - Input validation
-   - Documentation
-   - Type hints
-
-2. **Functionality (40%)**
-   - Successful data extraction
-   - Accurate scoring system
-   - API reliability
-   - Error handling
-   - Response format
-
-3. **Technical Design (30%)**
-   - Code structure
-   - Scalability
-   - Maintainability
-   - Testing coverage
-   - Documentation quality
-
-## 📚 API Documentation
-
-### Base URL
-`http://localhost:8000`
-
-### Endpoints
-
-1. Website Data
-```
+### Track-Specific Endpoints
+```http
 GET /api/v1/website/{business_name}
-```
-
-2. Google Maps Data
-```
 GET /api/v1/google-maps/{business_name}
-```
-
-3. Instagram Data
-```
 GET /api/v1/instagram/{business_name}
-```
-
-4. JustDial Data
-```
 GET /api/v1/justdial/{business_name}
 ```
 
-5. Credit Score
-```
+### Scoring Endpoint
+```http
 GET /api/v1/score/{business_name}
 ```
 
-## 🔍 Testing
+## 📊 Expected Response Formats
 
-1. Create test cases in the `tests` directory
-2. Test with real MSME data
-3. Validate scoring accuracy
-4. Check error handling
-5. Verify API responses
+### Website Analysis
+```json
+{
+    "domain_age": "2 years",
+    "ssl_status": true,
+    "has_product_pages": true,
+    "mobile_responsive": true
+}
+```
+
+### Google Maps Data
+```json
+{
+    "business_name": "Example Business",
+    "address": "123 Main St",
+    "rating": 4.5,
+    "review_count": 100,
+    "sample_reviews": [
+        {"text": "Great service!", "rating": 5},
+        {"text": "Good products", "rating": 4}
+    ],
+    "photo_count": 25
+}
+```
+
+### Instagram Data
+```json
+{
+    "username": "example_business",
+    "followers": 1000,
+    "post_count": 150,
+    "recent_posts": [
+        {"likes": 100, "comments": 10},
+        {"likes": 85, "comments": 8}
+    ],
+    "engagement_rate": 0.05
+}
+```
+
+### Final Score
+```json
+{
+    "business_name": "Example Business",
+    "score": 81,
+    "breakdown": {
+        "website": 25,
+        "google_maps": 34,
+        "instagram": 22
+    },
+    "explanation": "Good reviews and website trust; average engagement on Instagram."
+}
+```
+
+## 📋 Evaluation Criteria
+
+1. **Code Quality**
+   - Clean, well-documented code
+   - Proper error handling
+   - Type hints and validation
+
+2. **Functionality**
+   - Accurate data collection
+   - Reliable scoring system
+   - Proper data storage
+
+3. **API Design**
+   - Clear endpoint structure
+   - Consistent response formats
+   - Good error messages
+
+4. **Documentation**
+   - Clear code comments
+   - API documentation
+   - Setup instructions
+
+## 🐛 Testing
+
+1. **Run Tests**
+   ```bash
+   pytest
+   ```
+
+2. **Test Coverage**
+   ```bash
+   pytest --cov=app tests/
+   ```
 
 ## 📦 Project Structure
+
 ```
 credit-chakra-hackathon-template/
 ├── app/
-│   ├── main.py           # FastAPI application
-│   ├── website.py        # Website scraping
-│   ├── google_maps.py    # Google Maps scraping
-│   ├── instagram.py      # Instagram scraping
-│   ├── justdial.py       # JustDial scraping
-│   ├── scoring.py        # Credit scoring logic
-│   └── listing.py        # Data storage
+│   ├── main.py           # FastAPI application and endpoints
+│   ├── website.py        # Website analysis logic
+│   ├── listing.py        # Data storage management
+│   └── scoring.py        # Credit scoring logic
 ├── data/
-│   └── output.json       # Scraped data storage
+│   └── output.json       # Stored analysis results
 ├── tests/
-│   └── test_*.py         # Unit tests
-├── requirements.txt      # Dependencies
-└── README.md            # Documentation
+│   └── test_*.py         # Test files
+├── requirements.txt      # Project dependencies
+└── README.md            # This file
 ```
 
 ## ⚠️ Important Notes
 
-1. Use only publicly available data
-2. Implement proper rate limiting
-3. Handle errors gracefully
-4. Document your code
-5. Follow Python best practices
-6. Add proper logging
-7. Include error handling
-8. Write unit tests
+1. **API Keys and Credentials**
+   - Never commit API keys to the repository
+   - Use environment variables for sensitive data
+   - Document required credentials in .env.example
 
-## 🏁 Submission Guidelines
+2. **Rate Limiting**
+   - Implement rate limiting for external APIs
+   - Handle API quotas and limits
+   - Cache responses when appropriate
 
-1. Clean and documented code
-2. Working API endpoints
-3. Test data for at least 2 MSMEs
-4. README with setup instructions
-5. Requirements.txt with dependencies
-6. Unit tests
-7. API documentation
+3. **Error Handling**
+   - Handle network errors gracefully
+   - Provide meaningful error messages
+   - Log errors for debugging
 
-## 🤝 Need Help?
+## 🤝 Contributing
 
-- Check the FastAPI documentation: https://fastapi.tiangolo.com/
-- Review Python scraping best practices
-- Study the provided template code
-- Ask questions in the discussion forum
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-Good luck with your implementation! 🚀
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
