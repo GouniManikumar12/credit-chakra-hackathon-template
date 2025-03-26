@@ -6,6 +6,11 @@ A FastAPI application for analyzing MSME (Micro, Small, and Medium Enterprises) 
 
 This project helps evaluate MSMEs' digital presence by analyzing their online footprint across multiple platforms. Students need to implement data collection and scoring logic for 3 out of 4 available tracks.
 
+## ⏰ Timeline Recommendation
+
+We recommend completing and submitting your project within 48 hours of receiving this template.
+
+
 ## 🛠️ Available Tracks
 
 1. **Google Maps Analysis**
