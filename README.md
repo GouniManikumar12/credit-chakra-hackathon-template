@@ -1,5 +1,5 @@
 
-# 🧠 Credit Chakra Hackathon – Data Engineer Intern
+# Credit Chakra Hackathon – Data Engineer Intern
 
 Welcome to the Credit Chakra Hackathon Challenge! This is your chance to showcase your coding skills by extracting real-world digital presence data of MSMEs in India.
 
